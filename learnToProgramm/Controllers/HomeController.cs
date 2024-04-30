@@ -1,4 +1,6 @@
 ﻿using Application.Features.Queries.Home;
+using Application.Features.Queries.Home.FeedbackQuery;
+using Contracts.Requests.Home.GetIndex;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,5 +16,14 @@ public class HomeController(IMediator mediator) : Controller
 
         return View(response);
     }
-
+    
+    
+    [HttpPost]
+    public async Task<IActionResult> SubmitFeedback(FeedbackFeedDto feedbackDto, CancellationToken cancellationToken)
+    {
+        var command = new InsertFeedBackQuery(feedbackDto);
+        await mediator.Send(command, cancellationToken);
+    
+        return RedirectToAction("Index"); 
+    }
 }

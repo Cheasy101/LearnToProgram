@@ -9,8 +9,6 @@ public class DbContext : IdentityDbContext<User, Role, Guid>, IDbContext
 {
     public DbSet<Lesson> Lessons { get; set; } = default!;
     public DbSet<FeedbackFeed> FeedbackFeeds { get; set; } = default!;
-
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

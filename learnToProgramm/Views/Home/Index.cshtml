@@ -416,22 +416,21 @@
         <div class="row">
 
             <div class="col-md-6 col-sm-12">
-                <form id="contact-form" role="form" action="" method="post">
+                <form id="contact-form" role="form" action="@Url.Action("SubmitFeedback", "Home")" method="post">
                     <div class="section-title">
-                        @* todo хз буду ли его делать *@
                         <h2>Окно для обратной связи</h2>
                     </div>
 
                     <div class="col-md-12 col-sm-12">
-                        <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+                        <input type="text" class="form-control" placeholder="Введите ваше полное имя" asp-for="FeedbackDto.FullName" required>
 
-                        <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+                        <input type="email" class="form-control" placeholder="Введите адрес электронной почты" asp-for="FeedbackDto.EmailAddress" required>
 
-                        <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+                        <textarea class="form-control" rows="6" placeholder="Опишите ваше сообщение" asp-for="FeedbackDto.UserMessage" required></textarea>
                     </div>
 
                     <div class="col-md-4 col-sm-12">
-                        <input type="submit" class="form-control" name="send message" value="Send Message">
+                        <input type="submit" class="form-control" value="Отправить сообщение">
                     </div>
 
                 </form>
@@ -439,7 +438,7 @@
 
             <div class="col-md-6 col-sm-12">
                 <div class="contact-image">
-                    <img src="~/images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
+                    <img src="~/images/contact-image.jpg" class="img-responsive" alt="Две улыбающиеся девушки">
                 </div>
             </div>
 

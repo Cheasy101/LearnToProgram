@@ -8,6 +8,8 @@ namespace Application.Interfaces;
 /// </summary>
 public interface IDbContext
 {
+ 
+    public DbSet<FeedbackFeed> FeedbackFeeds { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
     
     public DbSet<User> Users { get; set; }
