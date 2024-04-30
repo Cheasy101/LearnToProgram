@@ -18,28 +18,17 @@
                     @Html.Raw(Model.LessonByIdDto.VideoLink)
                 }
             </div>
-            <div class="col-md-4">
-                <div class="sidebar">
-                    <h3>Related Lessons</h3>
-                    <ul>
-                        <li>
-                            <a href="#">Lesson 1: Introduction to Programming</a>
-                        </li>
-                        <li>
-                            <a href="#">Lesson 2: Variables and Data Types</a>
-                        </li>
-                        <li>
-                            <a href="#">Lesson 3: Loops and Iteration</a>
-                        </li>
-                        <li>
-                            <a href="#">Lesson 4: Conditional Statements</a>
-                        </li>
-                        <li>
-                            <a href="#">Lesson 5: Functions and Methods</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+           <div class="col-md-4">
+               <div class="sidebar">
+                   <h3>Related Lessons</h3>
+                   <ul>
+                       @foreach (var lesson in Model.AllLessonsForSidebarDto)
+                       {
+                           <li><a asp-controller="Lesson" asp-action="Index" asp-route-id="@lesson.Id">@lesson.Description</a></li>
+                       }
+                   </ul>
+               </div>
+           </div>
         </div>
     </div>
 </div>
