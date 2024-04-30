@@ -325,40 +325,18 @@
     <div class="col-md-4 col-sm-4">
         <div class="item">
             <div class="courses-thumb">
-                @* <div class="courses-top"> *@
-                @*     <div class="courses-image"> *@
-                @*         $1$ <img src="@course.ImageUrl" class="img-responsive" alt=""> #1# *@
-                @*     </div> *@
-                @*     $1$ <div class="courses-date"> #1# *@
-                @*     $1$     <span> #1# *@
-                @*     $1$         <i class="fa fa-calendar"></i> @lesson.Da #1# *@
-                @*     $1$     </span> #1# *@
-                @*     $1$     $2$ <span><i class="fa fa-clock-o"></i> @course.Duration.TotalHours Hours</span> #2# #1# *@
-                @*     $1$ </div> #1# *@
-                @* </div> *@
-
+                <div class="courses-top">
+                    <div class="courses-image">
+                        @* <img src="@lesson.LessonPhotoUrl" class="img-responsive" alt=""> *@
+                        <img src="@Url.Content(lesson.LessonPhotoUrl)" class="img-responsive" alt="Изображение курса">
+                    </div>
+                </div>
                 <div class="courses-detail">
                     <h3>
                         <a asp-controller="Lesson" asp-action="Index">@lesson.SmallDescription</a>
                     </h3>
                     <p>@lesson.SmallDescription</p>
                 </div>
-
-                @* <div class="courses-info"> *@
-                @*     $1$ <div class="courses-author"> #1# *@
-                @*     $1$     <!-- Author details --> #1# *@
-                @*     $1$ </div> #1# *@
-                @*     $1$ <div class="courses-price"> #1# *@
-                @*     $1$     @if (lesson.Price == 0) #1# *@
-                @*     $1$     { #1# *@
-                @*     $1$         <span>Free</span> #1# *@
-                @*     $1$     } #1# *@
-                @*     $1$     else #1# *@
-                @*     $1$     { #1# *@
-                @*     $1$         <span>USD @lesson.Price</span> #1# *@
-                @*     $1$     } #1# *@
-                @*     $1$ </div> #1# *@
-                @* </div> *@
             </div>
         </div>
     </div>
