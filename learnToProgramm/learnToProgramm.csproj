@@ -58,4 +58,8 @@
       <AdditionalFiles Include="Views\Auth\ResetPasswordConfirmAwait.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\images\Lessons\" />
+    </ItemGroup>
+
 </Project>

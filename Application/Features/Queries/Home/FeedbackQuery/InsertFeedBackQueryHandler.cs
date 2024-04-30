@@ -15,14 +15,14 @@ public class InsertFeedBackQueryHandler(IDbContext context) : IRequestHandler<In
             FullName = request.FeedbackDto.FullName,
             EmailAddress = request.FeedbackDto.EmailAddress,
             UserMessage = request.FeedbackDto.UserMessage,
-            CreatedAt = DateTime.UtcNow, // assuming creation time is set at this point
+            CreatedAt = DateTime.UtcNow, 
             UpdatedAt = DateTime.UtcNow
         };
 
         context.FeedbackFeeds.Add(feedback);
         await context.SaveChangesAsync(cancellationToken);
 
-        return request.FeedbackDto; // Return the DTO, maybe now with an updated ID if needed
+        return request.FeedbackDto;
     }
 
 }

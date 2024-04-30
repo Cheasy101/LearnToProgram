@@ -27,7 +27,6 @@ public class PostRegisterCommandHandler(UserManager<User> userManager, IEmailSen
         user = new User { Email = request.Email, UserName = request.UserName };
 
         await userManager.CreateAsync(user, request.Password);
-
         await userManager.AddToRoleAsync(user, request.Role.ToUpper());
         
         var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -37,6 +36,9 @@ public class PostRegisterCommandHandler(UserManager<User> userManager, IEmailSen
             AuthEmailMessages.ConfirmEmailMessage(user.UserName, confirmLink), cancellationToken);
         
         response.IsSuccessful = true;
+        
+       
+        
         return response;
     }
 }
