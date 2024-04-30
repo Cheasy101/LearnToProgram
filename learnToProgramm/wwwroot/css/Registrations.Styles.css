@@ -1,0 +1,27 @@
+﻿/* Стили для дополнительных классов формы */
+.custom-input {
+    border: 1px solid #ccc; /* Устанавливаем рамку */
+    border-radius: 5px; /* Закругляем углы */
+    padding: 10px; /* Внутренний отступ */
+    width: 100%; /* Ширина 100% */
+    transition: border-color 0.3s ease; /* Плавное изменение цвета рамки */
+}
+
+.custom-input:focus {
+    border-color: #29ca8e; /* Изменяем цвет рамки при фокусе */
+}
+
+.btn-theme {
+    background-color: #29ca8e; /* Цвет фона кнопки */
+    color: #ffffff; /* Цвет текста */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы */
+    padding: 10px 20px; /* Внутренний отступ */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Изменяем курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+}
+
+.btn-theme:hover {
+    background-color: #1e9a66; /* Изменяем цвет фона кнопки при наведении */
+}

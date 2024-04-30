@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>646c54ff-777c-4f50-bb36-45e1636dc0f6</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Persistence\Persistence.csproj" />
+      <ProjectReference Include="..\Services\Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Auth\ConfirmEmailAwait.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Auth\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Auth\Register.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Auth\ResetPassword.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Auth\ResetPasswordConfirm.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Auth\ResetPasswordConfirmAwait.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\ConfirmEmailAwait.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\Register.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\ResetPassword.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\ResetPasswordConfirm.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\ResetPasswordConfirmAwait.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Auth\ConfirmEmailAwait.cshtml" />
+      <AdditionalFiles Include="Views\Auth\Login.cshtml" />
+      <AdditionalFiles Include="Views\Auth\Register.cshtml" />
+      <AdditionalFiles Include="Views\Auth\ResetPassword.cshtml" />
+      <AdditionalFiles Include="Views\Auth\ResetPasswordConfirm.cshtml" />
+      <AdditionalFiles Include="Views\Auth\ResetPasswordConfirmAwait.cshtml" />
+    </ItemGroup>
+
+</Project>

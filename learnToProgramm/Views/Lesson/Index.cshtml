@@ -1,0 +1,45 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@* @{ *@
+@*     ViewData["Title"] = "Programming Lesson"; *@
+@* } *@
+
+<div id="lesson" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                @* <h2>@Model.LessonTitle</h2> *@
+                @* <p>@Model.LessonContent</p> *@
+                <div class="lesson-content">
+                    <h3>Chapter 1: Introduction</h3>
+                    <p>This chapter covers the basics of programming and its importance.</p>
+                    <h3>Chapter 2: Variables</h3>
+                    <p>In this chapter, we will learn about variables and data types.</p>
+                    <h3>Chapter 3: Loops</h3>
+                    <p>Here, we will explore different types of loops including for, while, and do-while loops.</p>
+                    <h3>Chapter 4: Conditionals</h3>
+                    <p>Learn how to use if, else if, and else statements to control the flow of your program.</p>
+                    <h3>Chapter 5: Functions</h3>
+                    <p>Understand the concept of functions and how to define and use them in your programs.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <h3>Related Lessons</h3>
+                    <ul>
+                        <li><a href="#">Lesson 1: Introduction to Programming</a></li>
+                        <li><a href="#">Lesson 2: Variables and Data Types</a></li>
+                        <li><a href="#">Lesson 3: Loops and Iteration</a></li>
+                        <li><a href="#">Lesson 4: Conditional Statements</a></li>
+                        <li><a href="#">Lesson 5: Functions and Methods</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

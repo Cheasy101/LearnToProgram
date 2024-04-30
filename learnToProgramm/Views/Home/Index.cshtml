@@ -1,0 +1,448 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Contracts.Requests.Home.GetIndex.GetCoursesResponseDto
+
+@{
+}
+
+<!-- HOME -->
+<section id="home">
+    <div class="row">
+
+        <div class="owl-carousel owl-theme home-slider">
+
+            <div class="item item-first">
+                <div class="caption">
+                    <div class="container">
+                        <div class="col-md-6 col-sm-12">
+                            <h1>Learn To Program</h1>
+                            <h3>Добро пожаловать!</h3>
+                            <a href="#feature" class="section-btn btn btn-default smoothScroll">Дальше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="item item-second">
+               <div class="caption">
+                   <div class="container">
+                       <div class="col-md-6 col-sm-12">
+                           <h1>Разблокируй свой потенциал</h1>
+                           <h3>Начни свой путь в мир программирования уже сегодня и открой безграничные возможности. 
+                               Будь то создание приложений, веб-сайтов или инновационного программного обеспечения, программирование – это твой путь к инновациям.</h3>
+                           <a href="#courses" class="section-btn btn btn-default smoothScroll">Пройти курс</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="item item-third">
+               <div class="caption">
+                   <div class="container">
+                       <div class="col-md-6 col-sm-12">
+                           <h1>Освой новые навыки</h1>
+                           <h3>Программирование дает тебе возможность превратить свои идеи в реальность.
+                               С каждой строчкой кода ты получаешь силу создавать, решать проблемы и вносить изменения.
+                               Сделай первый шаг к освоению новых навыков уже сегодня!</h3>
+                           <a href="#contact" class="section-btn btn btn-default smoothScroll">Давай поговорим</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="item item-four">
+               <div class="caption">
+                   <div class="container">
+                       <div class="col-md-6 col-sm-12">
+                           <h1>Преобрази свое будущее</h1>
+                           <h3>Программирование – это не только написание кода; это преобразование твоего будущего. 
+                               Будь то карьерный рост, раскрытие твоего творчества или решение сложных задач, 
+                               программирование – это ключ к светлому будущему.</h3>
+                           <a href="#contact" class="section-btn btn btn-default smoothScroll">Давай поговорим</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FEATURE -->
+<section id="feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="feature-thumb">
+                    <span>01</span>
+                    <h3>Базовый курс</h3>
+                    <p>
+                        Данный набор из 10 уроков даст вам базовый интродакшн в мире программирования. вы научитесь
+                        писать свой первый код.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="feature-thumb">
+                    <span>02</span>
+                    <h3>Препод</h3>
+                    <p>Данным сайтом владеет студент 3 курса института ИВМиИТ. Университета КФУ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TEAM -->
+<section id="team">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title">
+                    <h2>Преподаватель<small>.Net developer</small></h2>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                <div class="team-thumb">
+                    <div class="team-image">
+                        <img src="~/images/author-image1.jpg" class="img-responsive" alt="">
+                    </div>
+                    @* todo доставать себя из бд *@
+                    <div class="team-info">
+                        <h3>Булат Шарапов</h3>
+                        <span>Education is the way</span>
+                    </div>
+                    <ul class="social-icon">
+                        <li>
+                            <a href="mailto:bulat.sharapow@gmail.com"><i class="fa fa-envelope"></i>bulat.sharapow@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/your_telegram_handle">
+                                <i class="fa fa-telegram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</section>
+
+
+<!-- Courses -->
+<section id="courses">
+<div class="container">
+<div class="row">
+
+<div class="col-md-12 col-sm-12">
+<div class="section-title">
+    <h2>Доступные уроки <small>Первичное интро при обучении программированию</small></h2>
+</div>
+
+<div class="owl-carousel owl-theme owl-courses">
+@* <div class="col-md-4 col-sm-4"> *@
+@*     <div class="item"> *@
+@*         <div class="courses-thumb"> *@
+@*             <div class="courses-top"> *@
+@*                 <div class="courses-image"> *@
+@*                     <img src="~/images/courses-image1.jpg" class="img-responsive" alt=""> *@
+@*                 </div> *@
+@*                 <div class="courses-date"> *@
+@*                     <span><i class="fa fa-calendar"></i> 12 / 7 / 2018</span> *@
+@*                     <span><i class="fa fa-clock-o"></i> 7 Hours</span> *@
+@*                 </div> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-detail"> *@
+@*                 <h3> *@
+@*                     <a asp-controller="Lesson" asp-action="Index">Social Media Management</a> *@
+@*                 </h3> *@
+@*                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-info"> *@
+@*                 <div class="courses-author"> *@
+@*                     <img src="~/images/author-image1.jpg" class="img-responsive" alt=""> *@
+@*                     <span>Mark Wilson</span> *@
+@*                 </div> *@
+@*                 <div class="courses-price"> *@
+@*                     <a href="#"> *@
+@*                         <span>USD 25</span> *@
+@*                     </a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+@* *@
+@* <div class="col-md-4 col-sm-4"> *@
+@*     <div class="item"> *@
+@*         <div class="courses-thumb"> *@
+@*             <div class="courses-top"> *@
+@*                 <div class="courses-image"> *@
+@*                     <img src="~/images/courses-image2.jpg" class="img-responsive" alt=""> *@
+@*                 </div> *@
+@*                 <div class="courses-date"> *@
+@*                     <span><i class="fa fa-calendar"></i> 20 / 7 / 2018</span> *@
+@*                     <span><i class="fa fa-clock-o"></i> 4.5 Hours</span> *@
+@*                 </div> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-detail"> *@
+@*                 <h3> *@
+@*                     <a href="#">Graphic & Web Design</a> *@
+@*                 </h3> *@
+@*                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-info"> *@
+@*                 <div class="courses-author"> *@
+@*                     <img src="~/images/author-image2.jpg" class="img-responsive" alt=""> *@
+@*                     <span>Jessica</span> *@
+@*                 </div> *@
+@*                 <div class="courses-price"> *@
+@*                     <a href="#"> *@
+@*                         <span>USD 80</span> *@
+@*                     </a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+@* *@
+@* <div class="col-md-4 col-sm-4"> *@
+@*     <div class="item"> *@
+@*         <div class="courses-thumb"> *@
+@*             <div class="courses-top"> *@
+@*                 <div class="courses-image"> *@
+@*                     <img src="~/images/courses-image3.jpg" class="img-responsive" alt=""> *@
+@*                 </div> *@
+@*                 <div class="courses-date"> *@
+@*                     <span><i class="fa fa-calendar"></i> 15 / 8 / 2018</span> *@
+@*                     <span><i class="fa fa-clock-o"></i> 6 Hours</span> *@
+@*                 </div> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-detail"> *@
+@*                 <h3> *@
+@*                     <a href="#">Marketing Communication</a> *@
+@*                 </h3> *@
+@*                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-info"> *@
+@*                 <div class="courses-author"> *@
+@*                     <img src="~/images/author-image3.jpg" class="img-responsive" alt=""> *@
+@*                     <span>Catherine</span> *@
+@*                 </div> *@
+@*                 <div class="courses-price free"> *@
+@*                     <a href="#"> *@
+@*                         <span>Free</span> *@
+@*                     </a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+@* *@
+@* <div class="col-md-4 col-sm-4"> *@
+@*     <div class="item"> *@
+@*         <div class="courses-thumb"> *@
+@*             <div class="courses-top"> *@
+@*                 <div class="courses-image"> *@
+@*                     <img src="~/images/courses-image4.jpg" class="img-responsive" alt=""> *@
+@*                 </div> *@
+@*                 <div class="courses-date"> *@
+@*                     <span><i class="fa fa-calendar"></i> 10 / 8 / 2018</span> *@
+@*                     <span><i class="fa fa-clock-o"></i> 8 Hours</span> *@
+@*                 </div> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-detail"> *@
+@*                 <h3> *@
+@*                     <a href="#">Summer Kids</a> *@
+@*                 </h3> *@
+@*                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-info"> *@
+@*                 <div class="courses-author"> *@
+@*                     <img src="~/images/author-image1.jpg" class="img-responsive" alt=""> *@
+@*                     <span>Mark Wilson</span> *@
+@*                 </div> *@
+@*                 <div class="courses-price"> *@
+@*                     <a href="#"> *@
+@*                         <span>USD 45</span> *@
+@*                     </a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+@* *@
+@* <div class="col-md-4 col-sm-4"> *@
+@*     <div class="item"> *@
+@*         <div class="courses-thumb"> *@
+@*             <div class="courses-top"> *@
+@*                 <div class="courses-image"> *@
+@*                     <img src="~/images/courses-image5.jpg" class="img-responsive" alt=""> *@
+@*                 </div> *@
+@*                 <div class="courses-date"> *@
+@*                     <span><i class="fa fa-calendar"></i> 5 / 10 / 2018</span> *@
+@*                     <span><i class="fa fa-clock-o"></i> 10 Hours</span> *@
+@*                 </div> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-detail"> *@
+@*                 <h3> *@
+@*                     <a href="#">Business &amp; Management</a> *@
+@*                 </h3> *@
+@*                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> *@
+@*             </div> *@
+@* *@
+@*             <div class="courses-info"> *@
+@*                 <div class="courses-author"> *@
+@*                     <img src="~/images/author-image2.jpg" class="img-responsive" alt=""> *@
+@*                     <span>Jessica</span> *@
+@*                 </div> *@
+@*                 <div class="courses-price free"> *@
+@*                     <a href="#"> *@
+@*                         <span>Free</span> *@
+@*                     </a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+@foreach (var lesson in Model.Courses)
+{
+    <div class="col-md-4 col-sm-4">
+        <div class="item">
+            <div class="courses-thumb">
+                @* <div class="courses-top"> *@
+                @*     <div class="courses-image"> *@
+                @*         $1$ <img src="@course.ImageUrl" class="img-responsive" alt=""> #1# *@
+                @*     </div> *@
+                @*     $1$ <div class="courses-date"> #1# *@
+                @*     $1$     <span> #1# *@
+                @*     $1$         <i class="fa fa-calendar"></i> @lesson.Da #1# *@
+                @*     $1$     </span> #1# *@
+                @*     $1$     $2$ <span><i class="fa fa-clock-o"></i> @course.Duration.TotalHours Hours</span> #2# #1# *@
+                @*     $1$ </div> #1# *@
+                @* </div> *@
+
+                <div class="courses-detail">
+                    <h3>
+                        <a asp-controller="Lesson" asp-action="Index">@lesson.SmallDescription</a>
+                    </h3>
+                    <p>@lesson.SmallDescription</p>
+                </div>
+
+                @* <div class="courses-info"> *@
+                @*     $1$ <div class="courses-author"> #1# *@
+                @*     $1$     <!-- Author details --> #1# *@
+                @*     $1$ </div> #1# *@
+                @*     $1$ <div class="courses-price"> #1# *@
+                @*     $1$     @if (lesson.Price == 0) #1# *@
+                @*     $1$     { #1# *@
+                @*     $1$         <span>Free</span> #1# *@
+                @*     $1$     } #1# *@
+                @*     $1$     else #1# *@
+                @*     $1$     { #1# *@
+                @*     $1$         <span>USD @lesson.Price</span> #1# *@
+                @*     $1$     } #1# *@
+                @*     $1$ </div> #1# *@
+                @* </div> *@
+            </div>
+        </div>
+    </div>
+}
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12">
+                <div class="about-info">
+                    <h2>Learn To Program</h2>
+                    <div>
+                        <h3>Начни новый этап своей жизни вместе с образовательным курсом от Learn To Program</h3>
+                    </div>
+
+                </div>
+            </div>
+
+            @* <div class="col-md-offset-1 col-md-4 col-sm-12"> *@
+            @*     <div class="entry-form"> *@
+            @*         <form action="#" method="post"> *@
+            @*             <h2>Начни уже сегодня !</h2> *@
+            @*             $1$ todo  перейти на страницу регистрации сдеать #1# *@
+            @*             <button class="submit-btn form-control" id="form-submit">Зарегестрироваться</button> *@
+            @*         </form> *@
+            @*     </div> *@
+            @* </div> *@
+            
+            <div class="col-md-offset-1 col-md-4 col-sm-12">
+                <div class="entry-form">
+                    <form action="#" method="post">
+                        <h2>Начни уже сегодня!</h2>
+                        <a href="@Url.Action("Register", "Auth")" class="btn btn-theme form-control">Зарегистрироваться</a>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12">
+                <form id="contact-form" role="form" action="" method="post">
+                    <div class="section-title">
+                        @* todo хз буду ли его делать *@
+                        <h2>Окно для обратной связи</h2>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                        <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+
+                        <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+
+                        <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <input type="submit" class="form-control" name="send message" value="Send Message">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="contact-image">
+                    <img src="~/images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

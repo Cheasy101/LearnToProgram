@@ -1,0 +1,56 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Contracts.Requests.Auth.PostLogin.PostLoginRequest;
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "_Layout";
+}
+
+<div id="login" class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <div class="login-register-form-wrap">
+                    <div class="login-register-form">
+                        <div class="form-title">
+                            <h2 class="title">Sign In</h2>
+                        </div>
+                        <form asp-controller="Auth" asp-action="Login" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control custom-input" type="email" asp-for="Email" placeholder="Email">
+                                        <span asp-validation-for="Email"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control custom-input" type="password" asp-for="Password" placeholder="Password">
+                                        <span asp-validation-for="Password"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <div class="remember-forgot-info">
+                                            <div class="forgot-password">
+                                                <a asp-controller="Auth" asp-action="ResetPassword">Забыли пароль?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-theme">Sign In</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="login-register-form-info">
+                            <p>нет аккаунта? <a asp-controller="Auth" asp-action="Register">Зарегестрируйся!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
