@@ -13,10 +13,10 @@
                 <h2>@Model.LessonByIdDto.SmallDescription</h2>
                 <img src="@Url.Content(Model.LessonByIdDto.LessonPhotoUrl)" class="img-responsive" alt="Изображение курса">
                 <p>@Model.LessonByIdDto.Description</p>
-                @if (!string.IsNullOrEmpty(Model.LessonByIdDto.VideoLink))
-                {
-                    @Html.Raw(Model.LessonByIdDto.VideoLink)
-                }
+                @* @if (!string.IsNullOrEmpty(Model.LessonByIdDto.VideoLink)) *@
+                @* { *@
+                @*     @Html.Raw(Model.LessonByIdDto.VideoLink) *@
+                @* } *@
             </div>
            <div class="col-md-4">
                <div class="sidebar">

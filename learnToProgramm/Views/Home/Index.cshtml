@@ -1,8 +1,108 @@
-﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using System.Security.Claims
+@using Domain.Seed
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model Contracts.Requests.Home.GetIndex.GetCoursesResponseDto
 
 @{
+    // ViewBag.Title = "HOME";
+    Layout = null;
 }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Learn To Program - Education HTML Template</title>
+    <!-- 
+
+    Learn To Program Template 
+
+    https://templatemo.com/tm-516-Learn To Program
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/templatemo-style.css">
+
+</head>
+
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+<!-- PRE LOADER -->
+<section class="preloader">
+    <div class="spinner">
+
+        <span class="spinner-rotate"></span>
+
+    </div>
+</section>
+
+<!-- MENU -->
+<section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+
+            <!-- lOGO TEXT HERE -->
+            <a href="#" class="navbar-brand">Learn To Program</a>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-nav-first">
+                <li>
+                    <a href="#top" class="smoothScroll">Домой</a>
+                </li>
+                <li>
+                    <a href="#team" class="smoothScroll">Препод</a>
+                </li>
+                <li>
+                    <a href="#courses" class="smoothScroll">Уроки</a>
+                </li>
+                <li>
+                    <a href="#about" class="smoothScroll">Начни Прямо Сейчас!</a>
+                </li>
+                <li>
+                    <a href="#contact" class="smoothScroll">Контакты</a>
+                </li>
+            </ul>
+            @if (!User.IsInRole(DataContextSeed.StudentRoleName.Name))
+            {
+                <a href="https://www.youtube.com/watch?reload=9&v=dQw4w9WgXcQ">Сосои хуй! @User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)!.Value</a>
+            }
+                <a href="https://www.youtube.com/watch?reload=9&v=dQw4w9WgXcQ">Сосои хуй2! @User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)!.Value</a>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="mailto:bulat.sharapow@gmail.com"><i class="fa fa-envelope"></i>bulat.sharapow@gmail.com</a>
+                </li>
+                <li>
+                    <a href="https://t.me/your_telegram_handle">
+                        <i class="fa fa-telegram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
 
 <!-- HOME -->
 <section id="home">
@@ -258,3 +358,64 @@
         </div>
     </div>
 </section>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6">
+                <div class="footer-info">
+                    <div class="section-title">
+                        <h2>Learn To Program</h2>
+                    </div>
+                    <address>
+                        <p>Казань Деревня Универсиады<br>Тут все разработчики живут</p>
+                    </address>
+
+                    <div class="copyright-text">
+                        <p>Права принадлежат мне</p>
+
+                        <p>Шарапов Булат Алексеевич Автор</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="footer-info">
+                    <div class="section-title">
+                        <h2>Как связаться</h2>
+                    </div>
+                    <address>
+                        <p>+7(952)-812-89-10</p>
+                        <p>
+                            <a href="mailto:bulat.sharapow@gmail.com">bulat.sharapow@gmail.com</a>
+                        </p>
+                    </address>
+
+                    <div class="footer_menu">
+                        <h2>Сcылочки</h2>
+                        <ul>
+                            <li>
+                                <a href="https://ulearn.me/">Идейное вдоховение</a>
+                            </li>
+                            <li>
+                                <a href="https://learn.microsoft.com/ru-ru/">Дока от майков по шарпу</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- SCRIPTS -->
+<script src="~/js/jquery.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/smoothscroll.js"></script>
+<script src="~/js/custom.js"></script>
+</body>
+
+
+</html>

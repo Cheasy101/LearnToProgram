@@ -9,12 +9,10 @@ namespace Application.Features.Queries.Lesson;
 public class GetLessonByIdQueryHandler(IDbContext context)
     : IRequestHandler<GetLessonByIdQuery, LessonPageResponseModel>
 {
-
     public async Task<LessonPageResponseModel> Handle(GetLessonByIdQuery request, CancellationToken cancellationToken)
     {
-        // Запрос данных урока из базы данных по ID
         var lessonEntity = await context.Lessons
-            .Where(l => l.Id == request.Id)  // Убедитесь, что Id является свойством класса Lesson
+            .Where(l => l.Id == request.Id)
             .Select(l => new GetLessonByIdDto
             {
                 Id = l.Id,
@@ -26,10 +24,13 @@ public class GetLessonByIdQueryHandler(IDbContext context)
             })
             .FirstOrDefaultAsync(cancellationToken);
 
+        var lessons = await context.Lessons.Select(x =>
+            new LessonsForSidebarDto
+            {
+                Id = x.Id,
+                Description = x.SmallDescription
+            }).ToListAsync(cancellationToken);
 
-        // Проверка на наличие данных
-        return lessonEntity == null ?
-            new LessonPageResponseModel { LessonByIdDto = null } :
-            new LessonPageResponseModel { LessonByIdDto = lessonEntity };
+        return new LessonPageResponseModel { AllLessonsForSidebarDto = lessons, LessonByIdDto = lessonEntity! };
     }
 }
