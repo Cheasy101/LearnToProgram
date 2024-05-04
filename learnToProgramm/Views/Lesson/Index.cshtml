@@ -13,22 +13,31 @@
                 <h2>@Model.LessonByIdDto.SmallDescription</h2>
                 <img src="@Url.Content(Model.LessonByIdDto.LessonPhotoUrl)" class="img-responsive" alt="Изображение курса">
                 <p>@Model.LessonByIdDto.Description</p>
+                
+                <!-- Форма для отправки запроса на отметку урока как пройденного -->
+                <form asp-controller="Lesson" asp-action="SubmitFeedback" method="post">
+                    <input type="hidden" name="LessonId" value="@Model.LessonByIdDto.Id" />
+                    <input type="hidden" name="UserId" value="@User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value" />
+                    <button type="submit" class="btn btn-success">Отметить как пройденное</button>
+                </form>
+
+                @* Закомментированная секция видео *@
                 @* @if (!string.IsNullOrEmpty(Model.LessonByIdDto.VideoLink)) *@
                 @* { *@
                 @*     @Html.Raw(Model.LessonByIdDto.VideoLink) *@
                 @* } *@
             </div>
-           <div class="col-md-4">
-               <div class="sidebar">
-                   <h3>Related Lessons</h3>
-                   <ul>
-                       @foreach (var lesson in Model.AllLessonsForSidebarDto)
-                       {
-                           <li><a asp-controller="Lesson" asp-action="Index" asp-route-id="@lesson.Id">@lesson.Description</a></li>
-                       }
-                   </ul>
-               </div>
-           </div>
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <h3>Related Lessons</h3>
+                    <ul>
+                        @foreach (var lesson in Model.AllLessonsForSidebarDto)
+                        {
+                            <li><a asp-controller="Lesson" asp-action="Index" asp-route-id="@lesson.Id">@lesson.Description</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

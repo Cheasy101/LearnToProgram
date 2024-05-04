@@ -10,17 +10,17 @@ public class LessonController(IMediator mediator) : Controller
     public async Task<IActionResult> Index(Guid id, CancellationToken cancellationToken)
     {
         var lessonQuery = new GetLessonByIdQuery(id);
-        // var getLessonsSidebar = new GetAllLessonsForSidebarQuery();
-
         var response = await mediator.Send(lessonQuery, cancellationToken);
-        // var getLessonsSidebarTask = await mediator.Send(getLessonsSidebar, cancellationToken);
 
-        // Подготовка модели для представления, которая включает данные урока и связанных уроков
-        // var viewModel = new LessonPageResponseModel
-        // {
-        //     LessonByIdDto = lessonTask.LessonByIdDto,
-        //     // AllLessonsForSidebarDto = getLessonsSidebarTask.AllLessonsForSidebarDto
-        // };
         return View(response);
+    }
+    [HttpPost]
+    public async Task<IActionResult> SubmitFeedback(SubmitLessonAsDoneDto submitLesson,
+        CancellationToken cancellationToken)
+    {
+        var query = new SubmitLessonByIdQuery(submitLesson);
+        await mediator.Send(query, cancellationToken);
+
+        return RedirectToAction("Index", new { id = submitLesson.LessonId });
     }
 }
