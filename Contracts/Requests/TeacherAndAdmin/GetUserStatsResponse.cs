@@ -1,6 +1,4 @@
-using Contracts.Requests.TeacherAndAdmin;
-
-namespace Contracts.Requests.Home.GetIndex;
+namespace Contracts.Requests.TeacherAndAdmin;
 
 public class GetUserStatsResponse
 {
