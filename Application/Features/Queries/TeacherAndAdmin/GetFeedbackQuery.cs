@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Features.Queries.TeacherAndAdmin;
 
-public class GetFeedbackQuery: IRequest<GetUserStatsResponse>
+public class GetFeedbackQuery: IRequest<TeacherAndAdminResponse>
 {
     
 }

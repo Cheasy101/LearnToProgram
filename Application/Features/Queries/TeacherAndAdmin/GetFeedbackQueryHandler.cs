@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Queries.TeacherAndAdmin;
 
-public class GetFeedbackQueryHandler(IDbContext context) : IRequestHandler<GetFeedbackQuery, GetUserStatsResponse>
+public class GetFeedbackQueryHandler(IDbContext context) : IRequestHandler<GetFeedbackQuery, TeacherAndAdminResponse>
 {
-    public async Task<GetUserStatsResponse> Handle(GetFeedbackQuery request, CancellationToken cancellationToken)
+    public async Task<TeacherAndAdminResponse> Handle(GetFeedbackQuery request, CancellationToken cancellationToken)
     {
 
         var usersFeedback = await context.FeedbackFeeds.Select(x => new GetFeedbackResponseDto
@@ -21,6 +21,6 @@ public class GetFeedbackQueryHandler(IDbContext context) : IRequestHandler<GetFe
         }).ToListAsync(cancellationToken: cancellationToken);
         
         
-        return new GetUserStatsResponse{ FeedbackResponse = usersFeedback};
+        return new TeacherAndAdminResponse{ FeedbackResponse = usersFeedback};
     }
 }
