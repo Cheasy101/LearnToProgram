@@ -12,6 +12,8 @@ using Contracts.Requests.Auth.PostLogin;
 using Contracts.Requests.Auth.PostRegister;
 using Contracts.Requests.Auth.PostResetPassword;
 using Contracts.Requests.Auth.PostResetPasswordConfirm;
+using Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace learnToProgramm.Controllers;
 
@@ -24,6 +26,19 @@ namespace learnToProgramm.Controllers;
 public class AuthController(IMediator mediator)
     : Controller
 {
+    
+    /// <summary>
+    /// Метод чтобы выйти
+    /// </summary>
+    /// <returns>Вышел я</returns>
+    [HttpGet]
+    public async Task<IActionResult> Logout([FromServices] SignInManager<User> signInManager)
+    {
+        await signInManager.SignOutAsync();
+        return RedirectToAction("Index", "Home");
+    }
+    
+    
     /// <summary>
     /// Возвращает страницу логина
     /// </summary>

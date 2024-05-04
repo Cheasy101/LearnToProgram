@@ -52,7 +52,6 @@
 <!-- MENU -->
 <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
     <div class="container">
-
         <div class="navbar-header">
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon icon-bar"></span>
@@ -60,47 +59,37 @@
                 <span class="icon icon-bar"></span>
             </button>
 
-            <!-- lOGO TEXT HERE -->
+            <!-- LOGO TEXT HERE -->
             <a href="#" class="navbar-brand">Learn To Program</a>
         </div>
 
         <!-- MENU LINKS -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-nav-first">
-                <li>
-                    <a href="#top" class="smoothScroll">Домой</a>
-                </li>
-                <li>
-                    <a href="#team" class="smoothScroll">Препод</a>
-                </li>
-                <li>
-                    <a href="#courses" class="smoothScroll">Уроки</a>
-                </li>
-                <li>
-                    <a href="#about" class="smoothScroll">Начни Прямо Сейчас!</a>
-                </li>
-                <li>
-                    <a href="#contact" class="smoothScroll">Контакты</a>
-                </li>
+                <li><a href="#team" class="smoothScroll">Препод</a></li>
+                <li><a href="#courses" class="smoothScroll">Уроки</a></li>
+                <li><a href="#about" class="smoothScroll">Начни Прямо Сейчас!</a></li>
+                <li><a href="#contact" class="smoothScroll">Контакты</a></li>
             </ul>
-            @if (!User.IsInRole(DataContextSeed.StudentRoleName.Name))
-            {
-                <a href="https://www.youtube.com/watch?reload=9&v=dQw4w9WgXcQ">Сосои хуй! @User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)!.Value</a>
-            }
-                <a href="https://www.youtube.com/watch?reload=9&v=dQw4w9WgXcQ">Сосои хуй2! @User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)!.Value</a>
-
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="mailto:bulat.sharapow@gmail.com"><i class="fa fa-envelope"></i>bulat.sharapow@gmail.com</a>
-                </li>
-                <li>
-                    <a href="https://t.me/your_telegram_handle">
-                        <i class="fa fa-telegram"></i>
-                    </a>
-                </li>
+                <!-- Check if user is authenticated -->
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a class="smoothScroll">@User.Identity.Name</a></li>
+                    <li><a asp-controller="Auth" asp-action="Logout" class="smoothScroll">Выйти</a></li>
+
+                    @if (User.IsInRole("Teacher") || User.IsInRole("Admin"))
+                    {
+                        <li><a asp-controller="StudentStats" asp-action="Index" class="smoothScroll">Статы Студентов</a></li>
+                        <li><a asp-controller="Feedback" asp-action="Index" class="smoothScroll">Обратная связь</a></li>
+                    }
+                }
+                else
+                {
+                    <li><a asp-controller="Auth" asp-action="Login" class="smoothScroll">Войти</a></li>
+                }
             </ul>
         </div>
-
     </div>
 </section>
 
@@ -272,6 +261,10 @@
                                             </a>
                                         </h3>
                                         <p>@lesson.SmallDescription</p>
+                                        @if (lesson.IsDone)
+                                        {
+                                            <p>Пройдено</p>
+                                        }
                                     </div>
                                 </div>
                             </div>

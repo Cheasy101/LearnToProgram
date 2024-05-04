@@ -1,4 +1,5 @@
-﻿using Application.Features.Queries.Home;
+﻿using System.Security.Claims;
+using Application.Features.Queries.Home;
 using Application.Features.Queries.Home.FeedbackQuery;
 using Contracts.Requests.Home.GetIndex;
 using MediatR;
@@ -11,6 +12,8 @@ public class HomeController(IMediator mediator) : Controller
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var query = new GetCoursesQuery();
+
+        var xuy = User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier);
         
         var response = await mediator.Send(query, cancellationToken);
 

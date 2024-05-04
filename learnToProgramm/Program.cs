@@ -43,6 +43,7 @@ builder.Services.AddApplication();
 builder.Services.AddServices();
 //Добавление Persistence слоя
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddHttpContextAccessor();
 
 // builder.Services.AddRazorPages();
 // builder.Services.AddRazorComponents();
