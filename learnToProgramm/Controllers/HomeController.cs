@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using Application.Features.Queries.Home;
+﻿using Application.Features.Queries.Home;
 using Application.Features.Queries.Home.FeedbackQuery;
 using Contracts.Requests.Home.GetIndex;
 using MediatR;

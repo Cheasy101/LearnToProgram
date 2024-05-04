@@ -1,4 +1,3 @@
-using Contracts.Requests.Home.GetIndex;
 using Contracts.Requests.TeacherAndAdmin;
 using MediatR;
 

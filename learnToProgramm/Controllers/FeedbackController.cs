@@ -2,7 +2,6 @@ using Application.Features.Queries.TeacherAndAdmin;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace learnToProgramm.Controllers;
 

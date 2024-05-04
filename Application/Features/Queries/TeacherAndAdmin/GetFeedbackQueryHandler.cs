@@ -1,5 +1,4 @@
 using Application.Interfaces;
-using Contracts.Requests.Home.GetIndex;
 using Contracts.Requests.TeacherAndAdmin;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
