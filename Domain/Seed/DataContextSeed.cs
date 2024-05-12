@@ -43,8 +43,8 @@ public static class DataContextSeed
     /// <returns></returns>
     public static Lesson[] GetLessonSeeds()
     {
-        return new[]
-        {
+        return
+        [
             new Lesson
             {
                 Id = Guid.NewGuid(),
@@ -134,7 +134,7 @@ public static class DataContextSeed
                 SmallDescription = "Основы алгоритмов и структур данных",
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
-            },
-        };
+            }
+        ];
     }
 }

@@ -6,18 +6,19 @@
     Layout = "_Layout";
 }
 
-<!--== Start Faq Area Wrapper ==-->
-<section class="page-not-found-area">
+<section class="error-page-area">
     <div class="container pt--0 pb--0">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="page-not-found-wrap">
-                    <div class="page-not-found-thumb">
-                        <img src="~/img/photos/SomethingWentWrong.jpg" alt="Image">
+                <div class="error-page-wrap">
+                    <div class="error-page-thumb">
+                        <img src="~/img/photos/SomethingWentWrong.jpg" alt="Error Image" class="img-fluid">
                     </div>
-                    <div class="page-not-found-content">
-                        <h2 class="title">Ooups, something went wrong!</h2>
-                        <a class="btn-theme" asp-controller="Home" asp-action="Index"><i class="icofont-long-arrow-left"></i> Back to home</a>
+                    <div class="error-page-content">
+                        <h2 class="title">Oops, something went wrong!</h2>
+                        <a class="btn btn-primary" asp-controller="Home" asp-action="Index">
+                            <i class="icofont-long-arrow-left"></i> Back to Home
+                        </a>
                     </div>
                 </div>
             </div>
