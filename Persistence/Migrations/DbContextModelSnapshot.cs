@@ -82,83 +82,93 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0cbfeb57-fbfa-41e5-a15e-7b6ed9ae11ce"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9333),
+                            Id = new Guid("406abfd7-3f36-4f3d-9cfe-cd2bc0d13fb2"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8750),
                             Description = "Объяснение того, что такое переменная и как её объявить. Основные операции с переменными, такие как присваивание, обновление и использование.",
+                            LessonPhotoUrl = "photos/1.png",
                             SmallDescription = "Переменные и операции с ними",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9341)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8750)
                         },
                         new
                         {
-                            Id = new Guid("817ceacd-f3cb-4bd4-9f45-c0c12ff2693e"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9345),
+                            Id = new Guid("9b1861f0-d9cc-4dd0-be99-54b339c4c06d"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760),
                             Description = "Введение в различные типы данных, такие как целые числа (integers), дробные числа (floats) и строки (strings). Объяснение различий между типами данных и как они влияют на операции, которые можно выполнять.",
+                            LessonPhotoUrl = "photos/2.png",
                             SmallDescription = "Типы данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9345)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760)
                         },
                         new
                         {
-                            Id = new Guid("a755e381-fe45-4075-a8cb-38c5ad15df3b"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9348),
+                            Id = new Guid("2eb22afa-ea9c-47b3-bb0e-edcdd4e27d97"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760),
                             Description = "Как получать данные от пользователя через консоль (ввод) и выводить результаты работы программы (вывод). Работа с функциями input() и print() для взаимодействия с пользователем.",
+                            LessonPhotoUrl = "photos/3.png",
                             SmallDescription = "Ввод и вывод данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9349)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760)
                         },
                         new
                         {
-                            Id = new Guid("0820dfee-163a-43d9-bdd7-dd39f646a724"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9352),
+                            Id = new Guid("0558ebbe-65a9-4089-81fb-cfba94e4278b"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770),
                             Description = "Введение в операторы условия, такие как if, else и elif. Как использовать условные операторы для принятия решений в программе в зависимости от определённых условий.",
+                            LessonPhotoUrl = "photos/4.png",
                             SmallDescription = "Условные операторы",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9352)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770)
                         },
                         new
                         {
-                            Id = new Guid("806ec490-9e7e-4e44-8be5-8bd6e8e54a13"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9355),
+                            Id = new Guid("e18f525f-9a73-48fb-a6f9-04b297ea651c"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770),
                             Description = "Рассмотрение циклов, таких как цикл for и цикл while. Использование циклов для выполнения повторяющихся задач, таких как обход элементов списка или выполнение определённого количества итераций.",
+                            LessonPhotoUrl = "photos/5.png",
                             SmallDescription = "Циклы",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9355)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770)
                         },
                         new
                         {
-                            Id = new Guid("27ca8874-26f8-4bdc-99e1-9af0525f651e"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9373),
+                            Id = new Guid("10a1899c-aebb-4cf9-9500-905df5aa85e9"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780),
                             Description = "Понятие функций как набора инструкций, который может быть вызван из других частей программы. Создание и использование собственных функций для повторного использования кода.",
+                            LessonPhotoUrl = "photos/6.png",
                             SmallDescription = "Функции",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9374)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780)
                         },
                         new
                         {
-                            Id = new Guid("dcecf19d-16ee-4e53-a819-00f3c682df34"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9376),
+                            Id = new Guid("d63662ce-627b-4dec-afa9-2743c8faaf98"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780),
                             Description = "Введение в основные структуры данных, такие как списки (lists) и словари (dictionaries). Как использовать эти структуры данных для хранения и организации информации.",
+                            LessonPhotoUrl = "photos/7.png",
                             SmallDescription = "Структуры данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9377)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780)
                         },
                         new
                         {
-                            Id = new Guid("e91f5c62-c7d3-435b-afad-3d963ed6aa83"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9379),
+                            Id = new Guid("f57d533f-8107-42c2-acbe-c73f0875cbb2"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780),
                             Description = "Как открывать, читать и записывать данные в файлы на компьютере. Различные режимы работы с файлами: чтение (read), запись (write), добавление (append) и т.д.",
+                            LessonPhotoUrl = "photos/8.png",
                             SmallDescription = "Работа с файлами",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9380)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780)
                         },
                         new
                         {
-                            Id = new Guid("51be602d-624d-4ed7-af78-ab41902895d0"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9382),
+                            Id = new Guid("783d6738-4718-4f80-93fb-2f69f4bbedb1"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790),
                             Description = "Понятие и обработка исключений (exceptions) в программировании. Как использовать конструкцию try-except для предотвращения сбоев программы при возникновении ошибок.",
+                            LessonPhotoUrl = "photos/9.png",
                             SmallDescription = "Обработка ошибок",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9383)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790)
                         },
                         new
                         {
-                            Id = new Guid("ced4698f-3f86-4abe-b8c8-2f7ea406a653"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9385),
+                            Id = new Guid("d758ab7b-20d6-4294-b3c3-6f026085065a"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790),
                             Description = "Обзор базовых алгоритмических концепций, таких как сортировка и поиск. Введение в основные структуры данных, такие как стеки, очереди и деревья.",
+                            LessonPhotoUrl = "photos/10.png",
                             SmallDescription = "Основы алгоритмов и структур данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9386)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790)
                         });
                 });
 
