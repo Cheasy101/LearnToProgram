@@ -53,7 +53,8 @@ public static class DataContextSeed
                 SmallDescription = "Переменные и операции с ними",
                 LessonPhotoUrl = "photos/1.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/KUu8nTq0J3A?si=siLjWur0blEQ1PI7"
             },
             new Lesson
             {
@@ -63,7 +64,8 @@ public static class DataContextSeed
                 SmallDescription = "Типы данных",
                 LessonPhotoUrl = "photos/2.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/fNjVCSEXpDM?si=izfYrobvcVdf2ZAT"
             },
             new Lesson
             {
@@ -73,7 +75,8 @@ public static class DataContextSeed
                 SmallDescription = "Ввод и вывод данных",
                 LessonPhotoUrl = "photos/3.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/13SIaLUXicE?si=mgQcjoiYZJ2d428F"
             },
             new Lesson
             {
@@ -83,7 +86,8 @@ public static class DataContextSeed
                 SmallDescription = "Условные операторы",
                 LessonPhotoUrl = "photos/4.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/agse5YvwKoo?si=a-fGwqwpwrFpP_vU"
             },
             new Lesson
             {
@@ -93,7 +97,8 @@ public static class DataContextSeed
                 SmallDescription = "Циклы",
                 LessonPhotoUrl = "photos/5.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/MFSx0tbcRqc?si=D54HfFY_yJqrkk4L"
             },
             new Lesson
             {
@@ -103,7 +108,8 @@ public static class DataContextSeed
                 SmallDescription = "Функции",
                 LessonPhotoUrl = "photos/6.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/Xk8vRnm6xtc?si=BTMMP8uw5BLyufAD"
             },
             new Lesson
             {
@@ -113,7 +119,8 @@ public static class DataContextSeed
                 SmallDescription = "Структуры данных",
                 LessonPhotoUrl = "photos/7.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/watch?v=GcAwk3TjoaE"
             },
             new Lesson
             {
@@ -123,7 +130,8 @@ public static class DataContextSeed
                 SmallDescription = "Работа с файлами",
                 LessonPhotoUrl = "photos/8.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/rj9KHVLXaME?si=ktdv-uh5W8RnE0YQ"
             },
             new Lesson
             {
@@ -133,7 +141,8 @@ public static class DataContextSeed
                 SmallDescription = "Обработка ошибок",
                 LessonPhotoUrl = "photos/9.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/dbxWEe4Ke58?si=VQczxwIAAMMtz4h6"
             },
             new Lesson
             {
@@ -143,7 +152,8 @@ public static class DataContextSeed
                 SmallDescription = "Основы алгоритмов и структур данных",
                 LessonPhotoUrl = "photos/10.png",
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                VideoLink = "https://www.youtube.com/embed/CB9bS46vl04?si=1musPvHKSRQivKL7"
             }
         ];
     }
