@@ -6,17 +6,21 @@
     Layout = "_Layout";
 }
 
-<!--== Start Faq Area Wrapper ==-->
-<section class="page-not-found-area">
+<!--== Start Bad Request Area Wrapper ==-->
+<section class="error-page-area">
     <div class="container pt--0 pb--0">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="page-not-found-wrap">
-                    <div class="page-not-found-thumb">
-                        <img src="~/img/photos/BadRequest.jpg" alt="Image">
+                <div class="error-page-wrap">
+                    <div class="error-page-thumb">
+                        <img src="~/img/photos/BadRequest.jpg" alt="Bad Request Image" class="img-fluid">
                     </div>
-                    <div class="page-not-found-content">
-                        <a class="btn-theme" asp-controller="Home" asp-action="Index"><i class="icofont-long-arrow-left"></i> Back to home</a>
+                    <div class="error-page-content text-center">
+                        <h1>Oops! Something went wrong.</h1>
+                        <p>It seems we can't find what you're looking for. Perhaps searching can help or go back to the Homepage.</p>
+                        <a class="btn btn-primary mt-4" asp-controller="Home" asp-action="Index">
+                            <i class="icofont-long-arrow-left"></i> Back to Home
+                        </a>
                     </div>
                 </div>
             </div>

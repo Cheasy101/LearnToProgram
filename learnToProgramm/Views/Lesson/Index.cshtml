@@ -1,4 +1,5 @@
-﻿@model Contracts.Requests.lesson.LessonPageResponseModel
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Contracts.Requests.lesson.LessonPageResponseModel
 
 @{
     System.Diagnostics.Debug.Assert(Model.LessonByIdDto.SmallDescription != null, "Model.LessonByIdDto.SmallDescription != null");
@@ -13,22 +14,67 @@
                 <h2>@Model.LessonByIdDto.SmallDescription</h2>
                 <img src="@Url.Content(Model.LessonByIdDto.LessonPhotoUrl)" class="img-responsive" alt="Изображение курса">
                 <p>@Model.LessonByIdDto.Description</p>
-                @* @if (!string.IsNullOrEmpty(Model.LessonByIdDto.VideoLink)) *@
-                @* { *@
-                @*     @Html.Raw(Model.LessonByIdDto.VideoLink) *@
-                @* } *@
+
+                @if (!string.IsNullOrEmpty(Model.LessonByIdDto.VideoLink))
+                {
+                    <iframe width="560" height="315"
+                            data-src="@Model.LessonByIdDto.VideoLink"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                            class="lazyload-iframe">
+                    </iframe>
+
+                    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyloadIframes = document.querySelectorAll('.lazyload-iframe');
+            if ("IntersectionObserver" in window) {
+                var iframeObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var iframe = entry.target;
+                            iframe.src = iframe.dataset.src;
+                            iframeObserver.unobserve(iframe);
+                        }
+                    });
+                });
+
+                lazyloadIframes.forEach(function(iframe) {
+                    iframeObserver.observe(iframe);
+                });
+            } else {
+                // Fallback for browsers without Intersection Observer support
+                lazyloadIframes.forEach(function(iframe) {
+                    iframe.src = iframe.dataset.src;
+                });
+            }
+        });
+    </script>
+                }
+
+
+                <!-- Форма для отправки запроса на отметку урока как пройденного -->
+                <form asp-controller="Lesson" asp-action="SubmitFeedback" method="post">
+                    <input type="hidden" name="LessonId" value="@Model.LessonByIdDto.Id"/>
+                    <input type="hidden" name="UserId" value="@User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value"/>
+                    <button type="submit" class="btn btn-success">Отметить как пройденное</button>
+                </form>
             </div>
-           <div class="col-md-4">
-               <div class="sidebar">
-                   <h3>Related Lessons</h3>
-                   <ul>
-                       @foreach (var lesson in Model.AllLessonsForSidebarDto)
-                       {
-                           <li><a asp-controller="Lesson" asp-action="Index" asp-route-id="@lesson.Id">@lesson.Description</a></li>
-                       }
-                   </ul>
-               </div>
-           </div>
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <h3>Related Lessons</h3>
+                    <ul>
+                        @foreach (var lesson in Model.AllLessonsForSidebarDto)
+                        {
+                            <li>
+                                <a asp-controller="Lesson" asp-action="Index" asp-route-id="@lesson.Id">@lesson.Description</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

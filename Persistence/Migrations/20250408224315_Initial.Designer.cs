@@ -12,8 +12,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DbContext))]
-    [Migration("20240430084635_Add FeedBack Feed")]
-    partial class AddFeedBackFeed
+    [Migration("20250408224315_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,83 +85,93 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fb52f04b-d4b2-4a1d-8675-b92758bdedb6"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5311),
+                            Id = new Guid("406abfd7-3f36-4f3d-9cfe-cd2bc0d13fb2"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8750),
                             Description = "Объяснение того, что такое переменная и как её объявить. Основные операции с переменными, такие как присваивание, обновление и использование.",
+                            LessonPhotoUrl = "photos/1.png",
                             SmallDescription = "Переменные и операции с ними",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5316)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8750)
                         },
                         new
                         {
-                            Id = new Guid("08492cf8-b4ae-4cda-b211-ea03c336af7a"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5443),
+                            Id = new Guid("9b1861f0-d9cc-4dd0-be99-54b339c4c06d"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760),
                             Description = "Введение в различные типы данных, такие как целые числа (integers), дробные числа (floats) и строки (strings). Объяснение различий между типами данных и как они влияют на операции, которые можно выполнять.",
+                            LessonPhotoUrl = "photos/2.png",
                             SmallDescription = "Типы данных",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5444)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760)
                         },
                         new
                         {
-                            Id = new Guid("d9a0c048-da2a-4587-8612-f614f41e847c"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5447),
+                            Id = new Guid("2eb22afa-ea9c-47b3-bb0e-edcdd4e27d97"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760),
                             Description = "Как получать данные от пользователя через консоль (ввод) и выводить результаты работы программы (вывод). Работа с функциями input() и print() для взаимодействия с пользователем.",
+                            LessonPhotoUrl = "photos/3.png",
                             SmallDescription = "Ввод и вывод данных",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5448)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8760)
                         },
                         new
                         {
-                            Id = new Guid("be12b3ab-d5a4-435e-a87e-bbbd768d7754"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5450),
+                            Id = new Guid("0558ebbe-65a9-4089-81fb-cfba94e4278b"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770),
                             Description = "Введение в операторы условия, такие как if, else и elif. Как использовать условные операторы для принятия решений в программе в зависимости от определённых условий.",
+                            LessonPhotoUrl = "photos/4.png",
                             SmallDescription = "Условные операторы",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5451)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770)
                         },
                         new
                         {
-                            Id = new Guid("fd602f32-c761-4eae-a7c9-3fada47c21a8"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5453),
+                            Id = new Guid("e18f525f-9a73-48fb-a6f9-04b297ea651c"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770),
                             Description = "Рассмотрение циклов, таких как цикл for и цикл while. Использование циклов для выполнения повторяющихся задач, таких как обход элементов списка или выполнение определённого количества итераций.",
+                            LessonPhotoUrl = "photos/5.png",
                             SmallDescription = "Циклы",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5454)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8770)
                         },
                         new
                         {
-                            Id = new Guid("77490330-56b9-4986-97d7-c3a0ad19ef5b"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5456),
+                            Id = new Guid("10a1899c-aebb-4cf9-9500-905df5aa85e9"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780),
                             Description = "Понятие функций как набора инструкций, который может быть вызван из других частей программы. Создание и использование собственных функций для повторного использования кода.",
+                            LessonPhotoUrl = "photos/6.png",
                             SmallDescription = "Функции",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5457)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780)
                         },
                         new
                         {
-                            Id = new Guid("b262cd9b-3f09-406c-8b07-81b46f645153"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5495),
+                            Id = new Guid("d63662ce-627b-4dec-afa9-2743c8faaf98"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780),
                             Description = "Введение в основные структуры данных, такие как списки (lists) и словари (dictionaries). Как использовать эти структуры данных для хранения и организации информации.",
+                            LessonPhotoUrl = "photos/7.png",
                             SmallDescription = "Структуры данных",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5496)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780)
                         },
                         new
                         {
-                            Id = new Guid("12a369fd-92e1-430d-92e1-706f4d51a766"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5498),
+                            Id = new Guid("f57d533f-8107-42c2-acbe-c73f0875cbb2"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780),
                             Description = "Как открывать, читать и записывать данные в файлы на компьютере. Различные режимы работы с файлами: чтение (read), запись (write), добавление (append) и т.д.",
+                            LessonPhotoUrl = "photos/8.png",
                             SmallDescription = "Работа с файлами",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5499)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8780)
                         },
                         new
                         {
-                            Id = new Guid("73d9b8ce-4765-46f1-ade7-beb7f88a146a"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5501),
+                            Id = new Guid("783d6738-4718-4f80-93fb-2f69f4bbedb1"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790),
                             Description = "Понятие и обработка исключений (exceptions) в программировании. Как использовать конструкцию try-except для предотвращения сбоев программы при возникновении ошибок.",
+                            LessonPhotoUrl = "photos/9.png",
                             SmallDescription = "Обработка ошибок",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5502)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790)
                         },
                         new
                         {
-                            Id = new Guid("839f2b9f-966e-40d3-82f1-097996a26344"),
-                            CreatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5504),
+                            Id = new Guid("d758ab7b-20d6-4294-b3c3-6f026085065a"),
+                            CreatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790),
                             Description = "Обзор базовых алгоритмических концепций, таких как сортировка и поиск. Введение в основные структуры данных, такие как стеки, очереди и деревья.",
+                            LessonPhotoUrl = "photos/10.png",
                             SmallDescription = "Основы алгоритмов и структур данных",
-                            UpdatedAt = new DateTime(2024, 4, 30, 8, 46, 32, 777, DateTimeKind.Utc).AddTicks(5505)
+                            UpdatedAt = new DateTime(2025, 4, 8, 22, 43, 14, 936, DateTimeKind.Utc).AddTicks(8790)
                         });
                 });
 
@@ -286,6 +296,30 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.UserStats", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsDone")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid>("LessonId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LessonId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UsersStats");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -387,6 +421,25 @@ namespace Persistence.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.UserStats", b =>
+                {
+                    b.HasOne("Domain.Entities.Lesson", "Lesson")
+                        .WithMany()
+                        .HasForeignKey("LessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lesson");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

@@ -1,5 +1,4 @@
 using Application;
-using Domain.Seed;
 using learnToProgramm.Configuration;
 using learnToProgramm.Middlewares;
 using Persistence;

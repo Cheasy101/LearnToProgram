@@ -2,7 +2,6 @@
 using Contracts.Requests.Home.GetIndex;
 using Domain.Entities;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Queries.Home.FeedbackQuery;
 

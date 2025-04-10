@@ -82,83 +82,103 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0cbfeb57-fbfa-41e5-a15e-7b6ed9ae11ce"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9333),
+                            Id = new Guid("a3c513cc-d275-4a51-b789-a9e0a08521b6"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6190),
                             Description = "Объяснение того, что такое переменная и как её объявить. Основные операции с переменными, такие как присваивание, обновление и использование.",
+                            LessonPhotoUrl = "photos/1.png",
                             SmallDescription = "Переменные и операции с ними",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9341)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6190),
+                            VideoLink = "https://www.youtube.com/embed/KUu8nTq0J3A?si=siLjWur0blEQ1PI7"
                         },
                         new
                         {
-                            Id = new Guid("817ceacd-f3cb-4bd4-9f45-c0c12ff2693e"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9345),
+                            Id = new Guid("d580d9fc-6e7b-43f6-8062-5d654b194641"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6200),
                             Description = "Введение в различные типы данных, такие как целые числа (integers), дробные числа (floats) и строки (strings). Объяснение различий между типами данных и как они влияют на операции, которые можно выполнять.",
+                            LessonPhotoUrl = "photos/2.png",
                             SmallDescription = "Типы данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9345)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6200),
+                            VideoLink = "https://www.youtube.com/embed/fNjVCSEXpDM?si=izfYrobvcVdf2ZAT"
                         },
                         new
                         {
-                            Id = new Guid("a755e381-fe45-4075-a8cb-38c5ad15df3b"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9348),
+                            Id = new Guid("66fae362-a8c6-4592-b6d5-b62a15a78488"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6200),
                             Description = "Как получать данные от пользователя через консоль (ввод) и выводить результаты работы программы (вывод). Работа с функциями input() и print() для взаимодействия с пользователем.",
+                            LessonPhotoUrl = "photos/3.png",
                             SmallDescription = "Ввод и вывод данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9349)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6200),
+                            VideoLink = "https://www.youtube.com/embed/13SIaLUXicE?si=mgQcjoiYZJ2d428F"
                         },
                         new
                         {
-                            Id = new Guid("0820dfee-163a-43d9-bdd7-dd39f646a724"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9352),
+                            Id = new Guid("e656678e-d5d1-41c8-bd98-6a7eb3fc9399"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6210),
                             Description = "Введение в операторы условия, такие как if, else и elif. Как использовать условные операторы для принятия решений в программе в зависимости от определённых условий.",
+                            LessonPhotoUrl = "photos/4.png",
                             SmallDescription = "Условные операторы",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9352)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6210),
+                            VideoLink = "https://www.youtube.com/embed/agse5YvwKoo?si=a-fGwqwpwrFpP_vU"
                         },
                         new
                         {
-                            Id = new Guid("806ec490-9e7e-4e44-8be5-8bd6e8e54a13"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9355),
+                            Id = new Guid("00683fcf-78d7-461f-8d76-ff87ea036d03"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6210),
                             Description = "Рассмотрение циклов, таких как цикл for и цикл while. Использование циклов для выполнения повторяющихся задач, таких как обход элементов списка или выполнение определённого количества итераций.",
+                            LessonPhotoUrl = "photos/5.png",
                             SmallDescription = "Циклы",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9355)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6210),
+                            VideoLink = "https://www.youtube.com/embed/MFSx0tbcRqc?si=D54HfFY_yJqrkk4L"
                         },
                         new
                         {
-                            Id = new Guid("27ca8874-26f8-4bdc-99e1-9af0525f651e"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9373),
+                            Id = new Guid("ea57f077-fe11-4523-971c-6e62a9cc6596"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6220),
                             Description = "Понятие функций как набора инструкций, который может быть вызван из других частей программы. Создание и использование собственных функций для повторного использования кода.",
+                            LessonPhotoUrl = "photos/6.png",
                             SmallDescription = "Функции",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9374)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6220),
+                            VideoLink = "https://www.youtube.com/embed/Xk8vRnm6xtc?si=BTMMP8uw5BLyufAD"
                         },
                         new
                         {
-                            Id = new Guid("dcecf19d-16ee-4e53-a819-00f3c682df34"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9376),
+                            Id = new Guid("d36a124f-c1ba-43de-8865-7675f71f071a"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6220),
                             Description = "Введение в основные структуры данных, такие как списки (lists) и словари (dictionaries). Как использовать эти структуры данных для хранения и организации информации.",
+                            LessonPhotoUrl = "photos/7.png",
                             SmallDescription = "Структуры данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9377)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6220),
+                            VideoLink = "https://www.youtube.com/embed/watch?v=GcAwk3TjoaE"
                         },
                         new
                         {
-                            Id = new Guid("e91f5c62-c7d3-435b-afad-3d963ed6aa83"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9379),
+                            Id = new Guid("1b59775e-824e-4189-97b0-f7d892e07cbf"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6220),
                             Description = "Как открывать, читать и записывать данные в файлы на компьютере. Различные режимы работы с файлами: чтение (read), запись (write), добавление (append) и т.д.",
+                            LessonPhotoUrl = "photos/8.png",
                             SmallDescription = "Работа с файлами",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9380)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6220),
+                            VideoLink = "https://www.youtube.com/embed/rj9KHVLXaME?si=ktdv-uh5W8RnE0YQ"
                         },
                         new
                         {
-                            Id = new Guid("51be602d-624d-4ed7-af78-ab41902895d0"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9382),
+                            Id = new Guid("e1c8e062-94d6-4f87-ae4e-22bfff7a9bb7"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6230),
                             Description = "Понятие и обработка исключений (exceptions) в программировании. Как использовать конструкцию try-except для предотвращения сбоев программы при возникновении ошибок.",
+                            LessonPhotoUrl = "photos/9.png",
                             SmallDescription = "Обработка ошибок",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9383)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6230),
+                            VideoLink = "https://www.youtube.com/embed/dbxWEe4Ke58?si=VQczxwIAAMMtz4h6"
                         },
                         new
                         {
-                            Id = new Guid("ced4698f-3f86-4abe-b8c8-2f7ea406a653"),
-                            CreatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9385),
+                            Id = new Guid("b98e9d19-9a13-4f07-83f8-b4aa9fb11c52"),
+                            CreatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6230),
                             Description = "Обзор базовых алгоритмических концепций, таких как сортировка и поиск. Введение в основные структуры данных, такие как стеки, очереди и деревья.",
+                            LessonPhotoUrl = "photos/10.png",
                             SmallDescription = "Основы алгоритмов и структур данных",
-                            UpdatedAt = new DateTime(2024, 5, 3, 19, 55, 19, 501, DateTimeKind.Utc).AddTicks(9386)
+                            UpdatedAt = new DateTime(2025, 4, 8, 23, 0, 58, 59, DateTimeKind.Utc).AddTicks(6230),
+                            VideoLink = "https://www.youtube.com/embed/CB9bS46vl04?si=1musPvHKSRQivKL7"
                         });
                 });
 

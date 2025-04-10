@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces;
-using Contracts.Requests.Home.GetIndex;
 using Contracts.Requests.lesson;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

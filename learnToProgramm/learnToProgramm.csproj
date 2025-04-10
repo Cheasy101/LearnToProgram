@@ -62,4 +62,17 @@
       <Folder Include="wwwroot\images\Lessons\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="wwwroot\Photos\1.png" />
+      <None Include="wwwroot\Photos\10.png" />
+      <None Include="wwwroot\Photos\2.png" />
+      <None Include="wwwroot\Photos\3.png" />
+      <None Include="wwwroot\Photos\4.png" />
+      <None Include="wwwroot\Photos\5.png" />
+      <None Include="wwwroot\Photos\6.png" />
+      <None Include="wwwroot\Photos\7.png" />
+      <None Include="wwwroot\Photos\8.png" />
+      <None Include="wwwroot\Photos\9.png" />
+    </ItemGroup>
+
 </Project>
