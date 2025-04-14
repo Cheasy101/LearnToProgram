@@ -13,9 +13,12 @@
                 <h2>@ViewBag.Title</h2>
 
                 <div class="d-flex justify-content-end mb-4">
-                    <a asp-action="Edit" class="btn btn-success">
+                    <button class="btn btn-success"
+                            data-toggle="modal"
+                            data-target="#editLessonModal"
+                            data-url="@Url.Action("Create", "AdminLesson")">
                         <i class="fas fa-plus"></i> Создать урок
-                    </a>
+                    </button>
                 </div>
 
                 <div class="table-responsive">
@@ -36,7 +39,7 @@
                                     @if (!string.IsNullOrEmpty(lesson.LessonPhotoUrl))
                                     {
                                         <img src="/thumbnails/@System.IO.Path.GetFileName(lesson.LessonPhotoUrl)"
-                                             style="width: 100px; height: auto;" class="img-thumbnail" />
+                                             style="width: 100px; height: auto;" class="img-thumbnail"/>
                                     }
                                 </td>
                                 <td>@lesson.SmallDescription</td>
@@ -48,9 +51,13 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a asp-action="Edit" asp-route-id="@lesson.Id" class="btn btn-primary">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
+                                        <button class="btn btn-success"
+                                                data-toggle="modal"
+                                                data-target="#editLessonModal"
+                                                data-url="@Url.Action("Create", "AdminLesson")">
+                                            <i class="fas fa-edit"></i> Создать урок
+                                        </button>
+
                                         <form asp-action="Delete" method="post" onsubmit="return confirm('Удалить урок?');">
                                             <input type="hidden" name="id" value="@lesson.Id">
                                             <button type="submit" class="btn btn-danger">
@@ -68,3 +75,34 @@
         </div>
     </div>
 </div>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="editLessonModal" tabindex="-1" role="dialog" aria-labelledby="editLessonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Создание / Редактирование урока</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="editLessonModalContent">
+                <!-- сюда будет загружена форма через AJAX -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+    $('#editLessonModal').on('show.bs.modal', function (event) {
+        const button = $(event.relatedTarget);
+        const url = button.data('url');
+        const modal = $(this);
+
+        $.get(url, function (data) {
+            modal.find('#editLessonModalContent').html(data);
+        });
+    });
+</script>
+}

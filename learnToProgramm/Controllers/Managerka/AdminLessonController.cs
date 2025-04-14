@@ -57,4 +57,11 @@ public class AdminLessonController(IMediator mediator) : Controller
         await mediator.Send(new DeleteLessonCommand(id), ct);
         return RedirectToAction("Index");
     }
+    
+    [HttpGet("create")]
+    public IActionResult Create()
+    {
+        var dto = new AdminLessonEditDto(); // Пустая модель для формы создания
+        return PartialView("~/Views/Managerka/LessonsCrud/_EditLessonPartial.cshtml", dto);
+    }
 }

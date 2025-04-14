@@ -1,0 +1,36 @@
+@model Contracts.Requests.Manager.LessonsCrud.AdminLessonEditDto
+
+<form asp-action="Save" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group mb-3">
+        <label asp-for="SmallDescription" class="form-label">Краткое описание</label>
+        <input asp-for="SmallDescription" class="form-control" />
+        <span asp-validation-for="SmallDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Description" class="form-label">Полное описание</label>
+        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="VideoLink" class="form-label">Ссылка на видео</label>
+        <input asp-for="VideoLink" class="form-control" />
+        <span asp-validation-for="VideoLink" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label class="form-label">Изображение урока</label>
+        <input type="file" name="PhotoFile" class="form-control" />
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>
+
+@section Scripts {
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
