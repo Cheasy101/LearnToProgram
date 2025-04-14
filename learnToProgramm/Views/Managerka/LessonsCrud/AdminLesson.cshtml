@@ -35,7 +35,8 @@
                                 <td>
                                     @if (!string.IsNullOrEmpty(lesson.LessonPhotoUrl))
                                     {
-                                        <img src="@lesson.LessonPhotoUrl" style="width: 100px; height: auto;" class="img-thumbnail">
+                                        <img src="/thumbnails/@System.IO.Path.GetFileName(lesson.LessonPhotoUrl)"
+                                             style="width: 100px; height: auto;" class="img-thumbnail" />
                                     }
                                 </td>
                                 <td>@lesson.SmallDescription</td>
