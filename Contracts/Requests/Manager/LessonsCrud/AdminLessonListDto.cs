@@ -4,9 +4,9 @@ namespace Contracts.Requests.Manager.LessonsCrud;
 public class AdminLessonListDto
 {
     public Guid Id { get; set; }
-    public string SmallDescription { get; set; }
-    public string LessonPhotoUrl { get; set; }
-    public string VideoLink { get; set; }
+    public string? SmallDescription { get; set; }
+    public string? LessonPhotoUrl { get; set; }
+    public string? VideoLink { get; set; }
 }
 
 

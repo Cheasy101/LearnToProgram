@@ -17,9 +17,8 @@ public class AdminLessonController(IMediator mediator) : Controller
     public async Task<IActionResult> Index(CancellationToken ct)
     {
         var response = await mediator.Send(new GetAdminLessonsQuery(), ct);
-        return View(response);
+        return View("~/Views/Managerka/LessonsCrud/Index.cshtml", response);
     }
-
     [HttpGet("edit/{id?}")]
     public async Task<IActionResult> Edit(Guid? id, CancellationToken ct)
     {

@@ -46,3 +46,35 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+
+
+/* /Views/Shared/Layout.cshtml.css */
+
+.admin-lessons-table {
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin: 20px 0;
+}
+
+.admin-lessons-table thead th {
+  vertical-align: middle;
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+}
+
+.admin-lessons-table tbody tr:hover {
+  background-color: rgba(0,0,0,0.02);
+}
+
+.lesson-image {
+  max-height: 80px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
