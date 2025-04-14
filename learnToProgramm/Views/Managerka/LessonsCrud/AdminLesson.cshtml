@@ -55,13 +55,13 @@
                                                 data-toggle="modal"
                                                 data-target="#editLessonModal"
                                                 data-url="@Url.Action("Create", "AdminLesson")">
-                                            <i class="fas fa-edit"></i> Создать урок
+                                            <i class="fas fa-edit"></i> Редактировать урок
                                         </button>
 
                                         <form asp-action="Delete" method="post" onsubmit="return confirm('Удалить урок?');">
                                             <input type="hidden" name="id" value="@lesson.Id">
                                             <button type="submit" class="btn btn-danger">
-                                                <i class="fas fa-trash"></i>
+                                                <i class="fas fa-trash"></i> Удалить урок
                                             </button>
                                         </form>
                                     </div>
