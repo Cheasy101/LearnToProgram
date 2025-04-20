@@ -1,0 +1,111 @@
+@model Contracts.Requests.SharedStudentStats.StudentProgressResponse
+
+@{
+    ViewBag.Title = "Прогресс по курсу";
+    Layout = "_Layout";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">Прогресс по курсу</h2>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <canvas id="progressChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <p><strong>Пройдено:</strong> @Model.CompletedLessons из @Model.TotalLessons</p>
+            <p>
+                <strong>Осталось пройти:</strong> @Model.RemainingLessons
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Пройденные уроки</h4>
+            @if (Model.Completed.Any())
+            {
+                <div class="list-group">
+                    @foreach (var lesson in Model.Completed)
+                    {
+                        <a asp-controller="Lesson"
+                           asp-action="Index"
+                           asp-route-id="@lesson.Id"
+                           class="list-group-item list-group-item-action d-flex align-items-center gap-3">
+                            @if (!string.IsNullOrEmpty(lesson.LessonPhotoUrl))
+                            {
+                                <img src="/thumbnails/@System.IO.Path.GetFileName(lesson.LessonPhotoUrl)"
+                                     style="width: 60px; height: auto;" class="img-thumbnail"/>
+                            }
+                            else
+                            {
+                                <div class="text-muted" style="width: 60px;">–</div>
+                            }
+                            <span>@lesson.SmallDescription</span>
+                        </a>
+                    }
+                </div>
+            }
+            else
+            {
+                <p class="text-muted">Уроки ещё не пройдены</p>
+            }
+        </div>
+
+        <div class="col-md-6">
+            <h4>Уроки к прохождению</h4>
+            @if (Model.Remaining.Any())
+            {
+                <div class="list-group">
+                    @foreach (var lesson in Model.Remaining)
+                    {
+                        <a asp-controller="Lesson"
+                           asp-action="Index"
+                           asp-route-id="@lesson.Id"
+                           class="list-group-item list-group-item-action d-flex align-items-center gap-3">
+                            @if (!string.IsNullOrEmpty(lesson.LessonPhotoUrl))
+                            {
+                                <img src="/thumbnails/@System.IO.Path.GetFileName(lesson.LessonPhotoUrl)"
+                                     style="width: 60px; height: auto;" class="img-thumbnail"/>
+                            }
+                            else
+                            {
+                                <div class="text-muted" style="width: 60px;">–</div>
+                            }
+                            <span>@lesson.SmallDescription</span>
+                        </a>
+                    }
+                </div>
+            }
+            else
+            {
+                <p class="text-muted">Все уроки пройдены 🎉</p>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Пройдено', 'Осталось'],
+            datasets: [{
+                data: [@Model.CompletedLessons, @Model.RemainingLessons],
+                backgroundColor: ['#28a745', '#dc3545']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+</script>
+}
