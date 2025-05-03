@@ -12,6 +12,8 @@ public interface IDbContext
     public DbSet<FeedbackFeed> FeedbackFeeds { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
     public DbSet<UserStats> UsersStats { get; set; }
+    public DbSet<UserLessonHint> UserLessonHint { get; set; }
+
     public DbSet<User> Users { get; set; }
 
     public DbSet<Role> Roles { get; set; }
