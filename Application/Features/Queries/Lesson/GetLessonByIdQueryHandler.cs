@@ -19,17 +19,32 @@ public class GetLessonByIdQueryHandler(IDbContext context)
                 Description = l.Description,
                 SmallDescription = l.SmallDescription,
                 VideoLink = l.VideoLink,
+                PracticeTask = l.PracticeTask,
+                ExpectedOutput = l.ExpectedOutput,
+                SolutionCode = l.SolutionCode,
+                InitialCode = l.InitialCode,
                 CreatedAt = l.CreatedAt
             })
             .FirstOrDefaultAsync(cancellationToken);
 
-        var lessons = await context.Lessons.Select(x =>
-            new LessonsForSidebarDto
+        if (lessonEntity == null)
+        {
+            throw new NullReferenceException($"Lesson with id {request.Id} not found");
+        }
+
+        var lessons = await context.Lessons
+            .Where(x => x.Id != request.Id) // Исключаем текущий урок из списка связанных
+            .Select(x => new LessonsForSidebarDto
             {
                 Id = x.Id,
                 Description = x.SmallDescription
-            }).ToListAsync(cancellationToken);
+            })
+            .ToListAsync(cancellationToken);
 
-        return new LessonPageResponseModel { AllLessonsForSidebarDto = lessons, LessonByIdDto = lessonEntity! };
+        return new LessonPageResponseModel
+        {
+            AllLessonsForSidebarDto = lessons,
+            LessonByIdDto = lessonEntity
+        };
     }
 }
