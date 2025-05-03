@@ -2,9 +2,9 @@
 @model Contracts.Requests.lesson.LessonPageResponseModel
 
 @{
-System.Diagnostics.Debug.Assert(Model.LessonByIdDto.SmallDescription != null, "Model.LessonByIdDto.SmallDescription != null");
-ViewBag.Title = Model.LessonByIdDto.SmallDescription;
-Layout = "_Layout";
+    System.Diagnostics.Debug.Assert(Model.LessonByIdDto.SmallDescription != null, "Model.LessonByIdDto.SmallDescription != null");
+    ViewBag.Title = Model.LessonByIdDto.SmallDescription;
+    Layout = "_Layout";
 }
 
 <div id="lesson" class="section">
@@ -17,17 +17,17 @@ Layout = "_Layout";
 
                 @if (!string.IsNullOrEmpty(Model.LessonByIdDto.VideoLink))
                 {
-                <iframe width="560" height="315"
-                        data-src="@Model.LessonByIdDto.VideoLink"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                        class="lazyload-iframe">
-                </iframe>
+                    <iframe width="560" height="315"
+                            data-src="@Model.LessonByIdDto.VideoLink"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                            class="lazyload-iframe">
+                    </iframe>
 
-                <script>
+                    <script>
                     document.addEventListener("DOMContentLoaded", function() {
                         var lazyloadIframes = document.querySelectorAll('.lazyload-iframe');
                         if ("IntersectionObserver" in window) {
@@ -59,12 +59,12 @@ Layout = "_Layout";
 
                     @if (!string.IsNullOrEmpty(Model.LessonByIdDto.PracticeTask))
                     {
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Задание:</h5>
-                            <p class="card-text">@Model.LessonByIdDto.PracticeTask</p>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Задание:</h5>
+                                <p class="card-text">@Model.LessonByIdDto.PracticeTask</p>
+                            </div>
                         </div>
-                    </div>
                     }
 
                     <div id="editor" style="width:100%; height:400px; border:1px solid #ddd;"></div>
@@ -74,7 +74,7 @@ Layout = "_Layout";
                             <i class="fas fa-play mr-2"></i>Запустить код
                         </button>
                         <button id="checkButton" class="btn btn-primary" disabled>
-                            <i class="fas fa-check mr-2"></i>Отправить на проверку
+                            <i class="fas fa-check mr-2"></i>Проверить решение
                         </button>
                         <button id="resetButton" class="btn btn-outline-secondary">
                             <i class="fas fa-redo mr-2"></i>Сбросить
@@ -140,9 +140,9 @@ Layout = "_Layout";
                     <ul class="list-group">
                         @foreach (var lesson in Model.AllLessonsForSidebarDto)
                         {
-                        <li class="list-group-item">
-                            <a asp-controller="Lesson" asp-action="Index" asp-route-id="@lesson.Id">@lesson.Description</a>
-                        </li>
+                            <li class="list-group-item">
+                                <a asp-controller="Lesson" asp-action="Index" asp-route-id="@lesson.Id">@lesson.Description</a>
+                            </li>
                         }
                     </ul>
                 </div>
@@ -152,12 +152,12 @@ Layout = "_Layout";
 </div>
 
 @section Scripts {
-<!-- Подключаем Monaco Editor -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
-<!-- Font Awesome для иконок -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Подключаем Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<script>
+    <script>
     // Инициализация редактора
     require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs' }});
     require(['vs/editor/editor.main'], function() {
@@ -185,7 +185,6 @@ Layout = "_Layout";
         const attemptsCount = document.getElementById('attempts-count');
 
         let lastExecutionOutput = '';
-        let startTime = Date.now();
 
         // Обработчик кнопки запуска
         document.getElementById('runButton').addEventListener('click', async function() {
@@ -242,24 +241,28 @@ Layout = "_Layout";
         // Кнопка проверки решения
         document.getElementById('checkButton').addEventListener('click', async function() {
             const lessonId = '@Model.LessonByIdDto.Id';
-            const userCode = editor.getValue();
+            const userOutput = lastExecutionOutput;
+
+            if (!userOutput) {
+                showError('Сначала запустите код');
+                return;
+            }
 
             try {
-                const response = await fetch('/api/lesson/check-practice', {
+                const response = await fetch('/lesson/check-practice', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
                     },
                     body: JSON.stringify({
                         lessonId: lessonId,
-                        userCode: userCode,
-                        userOutput: lastExecutionOutput
+                        userOutput: userOutput
                     })
                 });
 
                 if (!response.ok) {
-                    throw new Error('Ошибка при проверке задания');
+                    throw new Error(await response.text());
                 }
 
                 const result = await response.json();
@@ -267,12 +270,10 @@ Layout = "_Layout";
                 // Показываем блок с результатом
                 checkResult.style.display = 'block';
 
-                if (result.isCorrect) {
+                if (result.isSuccessful) {
                     // Успешное выполнение
                     successAlert.style.display = 'block';
                     failAlert.style.display = 'none';
-
-                    // Обновляем информацию о попытках
                     attemptsInfo.innerHTML = `Попыток: ${result.attempts}`;
 
                     // Разблокируем кнопку завершения урока
@@ -283,16 +284,16 @@ Layout = "_Layout";
                     successAlert.style.display = 'none';
                     failAlert.style.display = 'block';
 
-                    // Обновляем информацию о попытках
-                    attemptsCount.innerHTML = `Попыток: ${result.attempts}`;
+                    let message = `Попыток: ${result.attempts}`;
 
-                    // Показываем ожидаемый вывод, если он есть
                     if (result.expectedOutput) {
-                        attemptsCount.innerHTML += `<div class="mt-2"><strong>Ожидаемый вывод:</strong><br>${result.expectedOutput.replace(/\n/g, '<br>')}</div>`;
+                        message += `<div class="mt-2"><strong>Ожидаемый вывод:</strong><br>${result.expectedOutput.replace(/\n/g, '<br>')}</div>`;
                     }
+
+                    attemptsCount.innerHTML = message;
                 }
             } catch (error) {
-                showErrorMessage('Ошибка при проверке задания: ' + error.message);
+                showError('Ошибка при проверке задания: ' + error.message);
             }
         });
 
@@ -307,14 +308,12 @@ Layout = "_Layout";
         });
 
         // Вспомогательные функции
-        function showErrorMessage(message) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'alert alert-danger mt-3';
-            errorDiv.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i>${message}`;
-            document.querySelector('.practice-section').appendChild(errorDiv);
+        function showError(message) {
+            errorEl.innerHTML = message;
+            errorEl.style.display = 'block';
 
             setTimeout(() => {
-                errorDiv.remove();
+                errorEl.style.display = 'none';
             }, 5000);
         }
     });
