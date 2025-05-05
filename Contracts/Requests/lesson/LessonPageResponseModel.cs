@@ -6,4 +6,10 @@ public class LessonPageResponseModel
     public List<LessonsForSidebarDto> AllLessonsForSidebarDto { get; set; } = default!;
 
     public SubmitLessonAsDoneDto SubmitLessonAsDoneDto { get; set; } = default!;
+
+
+    /// <summary>
+    /// Текст подсказки для текущего пользователя (если есть)
+    /// </summary>
+    public string? HintText { get; set; }
 }

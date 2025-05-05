@@ -17,7 +17,8 @@ public class CheckPracticeCommandHandler(IDbContext context)
         var lesson = await context.Lessons
             .FirstOrDefaultAsync(l => l.Id == request.LessonId, cancellationToken);
 
-        if (lesson == null) throw new Exception("Урок не найден");
+        if (lesson == null)
+            throw new Exception("Урок не найден");
 
         // 2. Работа со статистикой
         var userStats = await context.UsersStats
@@ -46,10 +47,25 @@ public class CheckPracticeCommandHandler(IDbContext context)
         userStats.IsDone = isMatch;
         await context.SaveChangesAsync(cancellationToken);
 
+        // 5. Проверка, есть ли подсказка
+        string? hintText = null;
+        var hint = await context.UserLessonHint
+            .FirstOrDefaultAsync(h => h.UserId == request.UserId
+                                      && h.LessonId == request.LessonId,
+                cancellationToken);
+
+        if (hint != null && userStats.Attempts >= hint.AttemptsThreshold)
+        {
+            hintText = hint.HintText;
+        }
+
+        // 6. Вернуть результат
         return new PracticeCheckResult(
             IsSuccessful: isMatch,
             Attempts: userStats.Attempts,
-            ExpectedOutput: isMatch ? null : lesson.ExpectedOutput);
+            ExpectedOutput: isMatch ? null : lesson.ExpectedOutput,
+            HintText: hintText
+        );
     }
 
     private string NormalizeOutput(string output)

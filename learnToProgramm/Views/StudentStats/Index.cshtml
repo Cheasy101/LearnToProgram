@@ -28,14 +28,19 @@
                     <td>@(stats.IsDone ? "Завершено" : "Не завершено")</td>
                     <td>@stats.Attempts</td>
                     <td>
-                        @if (stats.HasHint)
-                        {
-                            <span>@stats.Hint (после @stats.HintAttemptsThreshold попыток)</span>
-                        }
-                        else
-                        {
-                            <span class="text-muted">Подсказка не задана</span>
-                        }
+                        <span class="hint-cell"
+                              style="cursor: pointer; color: @(stats.HasHint ? "black" : "gray");"
+                              onclick="openHintModal('@stats.UserId', '@stats.LessonId', '@(stats.Hint ?? "")', '@(stats.HintAttemptsThreshold ?? 3)')">
+                            @if (stats.HasHint)
+                            {
+                                @stats.Hint
+                                <span>(после @(stats.HintAttemptsThreshold ?? 3) попыток)</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Нажмите, чтобы добавить</span>
+                            }
+                        </span>
                     </td>
                 </tr>
             }
@@ -47,3 +52,70 @@
         <p>Статистика пользователей отсутствует.</p>
     }
 </div>
+
+<!-- Модалка для ввода подсказки -->
+<div class="modal fade" id="hintModal" tabindex="-1" role="dialog" aria-labelledby="hintModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hintModalLabel">Добавить или изменить подсказку</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="hintUserId"/>
+                <input type="hidden" id="hintLessonId"/>
+                <div class="form-group">
+                    <label for="hintText">Текст подсказки:</label>
+                    <textarea class="form-control" id="hintText" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="hintAttempts">Порог попыток:</label>
+                    <input type="number" class="form-control" id="hintAttempts" min="1" value="3"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-primary" onclick="saveHint()">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+    function openHintModal(userId, lessonId, hintText, attempts) {
+        document.getElementById('hintUserId').value = userId;
+        document.getElementById('hintLessonId').value = lessonId;
+        document.getElementById('hintText').value = hintText;
+        document.getElementById('hintAttempts').value = attempts;
+
+        $('#hintModal').modal('show');
+    }
+
+    async function saveHint() {
+        const userId = document.getElementById('hintUserId').value;
+        const lessonId = document.getElementById('hintLessonId').value;
+        const hintText = document.getElementById('hintText').value;
+        const attempts = document.getElementById('hintAttempts').value;
+
+        const response = await fetch('@Url.Action("SetUserHint", "StudentStats")', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                userId: userId,
+                lessonId: lessonId,
+                hint: hintText,
+                attemptsThreshold: parseInt(attempts)
+            })
+        });
+
+        if (response.ok) {
+            location.reload();
+        } else {
+            alert('Ошибка при сохранении подсказки');
+        }
+    }
+</script>
+}

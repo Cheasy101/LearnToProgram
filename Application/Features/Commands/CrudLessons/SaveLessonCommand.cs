@@ -5,11 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Commands.CrudLessons;
 
-
 // Application/Features/Commands/Lesson/Admin
 public class SaveLessonCommand(AdminLessonEditDto dto, Guid userId) : IRequest
 {
     public AdminLessonEditDto Dto { get; } = dto;
     public Guid UserId { get; } = userId;
 }
-

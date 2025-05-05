@@ -1,5 +1,6 @@
 ﻿using System.Security.Claims;
 using Application.Features.Commands.Practice;
+using Application.Features.Queries.Hints;
 using Application.Features.Queries.Lesson;
 using Contracts.Requests.lesson;
 using Contracts.Requests.Practice;
@@ -15,8 +16,18 @@ public class LessonController(IMediator mediator, ILogger<LessonController> logg
     {
         var lessonQuery = new GetLessonByIdQuery(id);
         var response = await mediator.Send(lessonQuery, cancellationToken);
+
+        var userId = User.Identity.IsAuthenticated
+            ? Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))
+            : Guid.Empty;
+
+        if (userId == Guid.Empty) return View(response);
+        var hint = await mediator.Send(new GetLessonHintQuery(id, userId), cancellationToken);
+        response.HintText = hint?.HintText; // Сохраняем в модель для Razor
+
         return View(response);
     }
+
 
     [HttpPost]
     public async Task<IActionResult> SubmitFeedback(SubmitLessonAsDoneDto submitLesson,
@@ -33,15 +44,14 @@ public class LessonController(IMediator mediator, ILogger<LessonController> logg
         [FromBody] CheckPracticeRequest request,
         [FromServices] IMediator mediator)
     {
-        
         logger.LogInformation("User claims:");
         foreach (var claim in User.Claims)
         {
             logger.LogInformation($"Type: {claim.Type}, Value: {claim.Value}");
         }
-        
+
         var userId = Guid.Parse(
-            User.FindFirstValue(ClaimTypes.NameIdentifier) 
+            User.FindFirstValue(ClaimTypes.NameIdentifier)
             ?? throw new Exception("Не найден клейм NameIdentifier")
         );
         var command = new CheckPracticeCommand(

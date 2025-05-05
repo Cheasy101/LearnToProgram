@@ -1,3 +1,4 @@
+using Application.Features.Commands.UserLessonHint;
 using Application.Features.Queries.TeacherAndAdmin.UserStats;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -15,4 +16,15 @@ public class StudentStatsController(IMediator mediator) : Controller
 
         return View(response);
     }
+
+    [HttpPost("set-user-hint")]
+    public async Task<IActionResult> SetUserHint([FromBody] SetUserLessonHintRequest request, CancellationToken ct)
+    {
+        var command =
+            new SetUserLessonHintCommand(request.UserId, request.LessonId, request.Hint, request.AttemptsThreshold);
+        await mediator.Send(command, ct);
+        return Ok();
+    }
 }
+
+public record SetUserLessonHintRequest(Guid UserId, Guid LessonId, string Hint, int AttemptsThreshold);
